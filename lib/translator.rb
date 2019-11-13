@@ -1,13 +1,34 @@
 # require modules here
 require "yaml"
-emoticons = YAML.load_library('emoticons.yml')
 
 
-def load_library
-  # code goes here
+def load_library(file_path)
+
+new_meaning = {}
+emoticons = YAML.load_file(file_path)
+
+emoticons.each do |key, value|
+    if new_meaning["get_meaning"] == nil
+      new_meaning["get_meaning"] = {}
+    end
+    if new_meaning["get_emoticon"] == nil
+      new_meaning["get_emoticon"] = {}
+    end
+    new_meaning["get_meaning"][value[1]] = key
+    new_meaning["get_emoticon"][value[0]] = value[1]
+
 end
 
-def get_japanese_emoticon
+new_meaning
+end
+
+def get_japanese_emoticon(file_path, emoticon)
+  meanings = load_library(file_path)
+
+
+  if !meanings["get_meaning"].include?(emoticon)
+    puts "Sorry not found..."
+  end
   # code goes here
 end
 
