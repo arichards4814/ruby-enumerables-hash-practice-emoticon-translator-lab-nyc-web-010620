@@ -28,8 +28,15 @@ def get_japanese_emoticon(file_path, emoticon)
 
   if !meanings["get_meaning"].include?(emoticon)
     return "Sorry, that emoticon was not found"
+  else
+    
+    
+    
   end
-  # code goes here
+  
+  
+  
+  
 end
 
 def get_english_meaning
