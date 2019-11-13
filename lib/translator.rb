@@ -30,7 +30,7 @@ def get_japanese_emoticon(file_path, emoticon)
     return "Sorry, that emoticon was not found"
   else
     
-    puts meanings["get_emoticon"][emoticon]
+    return meanings["get_emoticon"][emoticon]
     
   end
   
