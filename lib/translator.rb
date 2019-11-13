@@ -23,17 +23,16 @@ new_meaning
 end
 
 def get_japanese_emoticon(file_path, emoticon)
-  meanings = load_library(file_path)
+ meanings = load_library(file_path)
 
 
-  if !meanings["get_meaning"].include?(emoticon)
+  if !meanings["get_emoticon"].include?(emoticon)
     return "Sorry, that emoticon was not found"
   else
     
-    return meanings["get_emoticon"][emoticon]
+    puts meanings["get_emoticon"][emoticon]
     
   end
-  
   
   
   
